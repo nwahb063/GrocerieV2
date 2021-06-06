@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <! This style sheet is taken from  https://www.w3schools.com/howto/howto_js_tabs.asp>
+    <link href="styles/styleLab3.css" rel="stylesheet" type="text/css" />
+  </head>
+
+  <body>
+    <div class="sidenav">
+     
+      <a class="nav" id="nav-Product" onclick="navSelected('Product', 'Cart')">Produit</a>
+      <a class="nav" id="nav-Cart" onclick="navSelected('Cart', 'Product')">Panier</a>
+    </div>
+
+    <div class="main">
+      <!-- Header Content-->
+      <section class="header">
+        <h1> H24 </h1>
+      </section>
+
+      <section id="Product" class="section-product">
+        <section class="container-product">
+          <h3>Categorie</h3>
+
+          <ul class="myCategory">
+            <li>
+              <a
+                id="Pains"
+                value="Pains"
+                onclick="onClickCategory(this.id, 'displayProduct')"
+                >Pains</a
+              >
+            </li>
+            <li>
+              <a
+                id="Viandes"
+                value="Viandes"
+                onclick="onClickCategory(this.id, 'displayProduct')"
+                >Viandes</a
+              >
+            </li>
+            <li>
+              <a
+                id="Legumes"
+                value="Legumes"
+                onclick="onClickCategory(this.id, 'displayProduct')"
+                >Legumes</a
+              >
+            </li>
+            <li>
+              <a
+                id="Fruits"
+                value="Fruits"
+                onclick="onClickCategory(this.id, 'displayProduct')"
+                >Fruits</a
+              >
+            </li>
+            <li>
+              <a
+                id="Produits Laitiers"
+                value="Produits Laitiers"
+                onclick="onClickCategory(this.id, 'displayProduct')"
+                > Produits Laitiers</a
+              >
+            </li>
+          </ul>
+
+          <div class="container-checkbox">
+            <h4 style="font-weight: bold;">Optional</h4>
+            <input type="checkbox" id="OrganicProduct" name="OrganicProduct"
+            value="OrganicProduct" onclick="onClickCategory(1, 'displayProduct')">
+            <label for="OrganicProduct">Produits Organique</label>
+          </div>
+          <div class="container-checkbox">
+            <input type="checkbox" id="pas_de_lactose" name="Sans_lactose"
+            value="Sans_lactose" onclick="onClickCategory(1, 'displayProduct')">
+            <label for="Sans_lactose"> sans lactose</label>
+          </div>
+          <div class="container-checkbox">
+            <input type="checkbox" id="allergie_noix" name="Allergie_noix"
+            value="Allergie_noix" onclick="onClickCategory(1, 'displayProduct')">
+            <label for="Allergie_noix">allergie aux noix </label>
+          </div>
+        </section>
+        <section class="container-product">
+          <h3>Liste des produits</h3>
+          <div class="list-product">
+            <div id="displayProduct"></div>
+          </div>
+          <div class="container-center">
+            <button class="button" onclick="selectedItems()">ajout au Panier</button>
+          </div>
+        </section>
+      </section>
+      
+      <section id="Cart" class="section-product" style="display: none;">
+        <section class="container-product">
+          <h3>Cart</h3>
+          <div class="list-product">
+            <div id="displayCart"></div>
+          </div>
+        </section>
+      </section>
+    </div>
+
+    <script src="scripts/groceries.js"></script>
+    <script src="scripts/main.js"></script>
+  </body>
+
+ <footer>
+    <div class="container align-center">
+        <br>
+        <p><a href="#">Nabil Wahbi</a></p>
+    </div>
+</footer>
+</html>
